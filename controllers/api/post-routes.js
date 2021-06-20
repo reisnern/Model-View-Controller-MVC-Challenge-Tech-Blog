@@ -14,13 +14,9 @@ router.get('/', async(req, res) => {
 });
 
 // GET single post by ID
-router.get('/', async(req, res) => {
+router.get('/:id', async(req, res) => {
   try {
-    const postData = await Post.findByPk({
-      where: {
-        id: req.params.id
-      }
-    });
+    const postData = await Post.findByPk(req.params.id);
 
     if (!postData) {
       res.status(404).json({ message: 'No post found with this id!' });
@@ -49,7 +45,7 @@ router.post('/', async(req, res) => {
 });
 
 // UPDATE post by ID
-router.put('/:id', (req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const postData = await Post.update(
       {

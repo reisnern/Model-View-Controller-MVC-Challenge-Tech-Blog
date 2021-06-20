@@ -14,13 +14,9 @@ router.get('/', async(req, res) => {
 });
 
 // GET single user by ID
-router.get('/', async(req, res) => {
+router.get('/:id', async(req, res) => {
   try {
-    const userData = await User.findByPk({
-      where: {
-        id: req.params.id
-      },
-    });
+    const userData = await User.findByPk(req.params.id);
 
     if (!userData) {
       res.status(404).json({ message: 'No user found with this id!' });
