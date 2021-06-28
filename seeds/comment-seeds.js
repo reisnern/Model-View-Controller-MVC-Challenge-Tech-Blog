@@ -19,12 +19,12 @@ const commentData = [
     post_id: '5'
   },
   {
-    comment: `Can't wait to try these out!`,
+    comment: `Can't wait to for this albulm to come out!`,
     user_id: '3',
     post_id: '4'
   },
   {
-    comment: `I've used both, but my preference is Postman.`,
+    comment: `This artist is lit!`,
     user_id: '2',
     post_id: '2'
   }
