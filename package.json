@@ -22,13 +22,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iamalittleforest/14-tech-blog.git"
+    "url": "git+https://github.com/reisnern/Model-View-Controller-MVC-Challenge-Tech-Blog"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iamalittleforest/14-tech-blog/issues"
+    "url": "https://github.com/reisnern/Model-View-Controller-MVC-Challenge-Tech-Blog/issues"
   },
-  "homepage": "https://github.com/iamalittleforest/14-tech-blog#readme"
+  "homepage": "https://github.com/reisnern/Model-View-Controller-MVC-Challenge-Tech-Blog#readme"
 }

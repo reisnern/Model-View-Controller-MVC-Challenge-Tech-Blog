@@ -22,6 +22,8 @@ const userData = [
 ];
 
 // create and insert multiple Users using userData
-const seedUsers = () => User.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData, {
+  individualHooks: true
+});
 
 module.exports = seedUsers;

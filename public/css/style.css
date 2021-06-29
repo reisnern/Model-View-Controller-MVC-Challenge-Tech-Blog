@@ -84,6 +84,6 @@
   .post-link:visited,
   .post-link:hover,
   .post-link:active {
-    color: #ffffff;
+    color: hsl(0, 0%, 38%);
     text-decoration: none;
   }
