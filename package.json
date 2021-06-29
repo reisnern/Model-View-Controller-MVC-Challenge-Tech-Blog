@@ -16,7 +16,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "start": "node server",
+    "heroku-postbuild": "npm run seed"
   },
   "repository": {
     "type": "git",

@@ -2,6 +2,9 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
+// import helper to prevent access unless user is logged in
+const withAuth = require('../../utils/auth');
+
 // GET all comments
 router.get('/', async(req, res) => {
   try {
@@ -14,13 +17,13 @@ router.get('/', async(req, res) => {
 });
 
 // CREATE new comment
-router.post('/', async(req, res) => {
+router.post('/', withAuth, async(req, res) => {
   try {
     const commentData = await Comment.create({
-      comment: req.body.comment,
-      user_id: req.body.user_id,
-      post_id: req.body.post_id
+      ...req.body,
+      user_id: req.session.user_id
     });
+    
     res.status(200).json(commentData);
   } catch (err) {
     res.status(400).json(err);

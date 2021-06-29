@@ -1,0 +1,18 @@
+<!-- view comment -->
+{{#each comments}}
+<div class="col">
+  <div class="card m-2">
+    <div class="card-header comment-bg">
+      <div class="action-txt">Comment</div>
+    </div>
+    <div class="card-body body-bg">
+      <div class="comment-txt">
+        {{comment}}
+      </div>
+      <figcaption class="blockquote-footer source-txt">
+        {{user.username}}, <cite title="Date">{{format_date date_created}}</cite>
+      </figcaption>
+    </div>
+  </div>
+</div>
+{{/each}}

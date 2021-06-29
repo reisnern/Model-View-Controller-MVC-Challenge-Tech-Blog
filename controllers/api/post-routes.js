@@ -2,6 +2,9 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 
+// import helper to prevent access unless user is logged in
+const withAuth = require('../../utils/auth');
+
 // GET all posts
 router.get('/', async(req, res) => {
   try {
@@ -30,12 +33,11 @@ router.get('/:id', async(req, res) => {
 });
 
 // CREATE new post
-router.post('/', async(req, res) => {
+router.post('/', withAuth, async(req, res) => {
   try {
     const postData = await Post.create({
-      title: req.body.title,
-      content: req.body.content,
-      user_id: req.body.user_id
+      ...req.body,
+      user_id: req.session.user_id
     });
 
     res.status(200).json(postData);
@@ -45,7 +47,7 @@ router.post('/', async(req, res) => {
 });
 
 // UPDATE post by ID
-router.put('/:id', async(req, res) => {
+router.put('/:id', withAuth, async(req, res) => {
   try {
     const postData = await Post.update(
       {
@@ -59,7 +61,7 @@ router.put('/:id', async(req, res) => {
       }
     );
   
-   if (!postData) {
+    if (!postData) {
       res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
@@ -71,7 +73,7 @@ router.put('/:id', async(req, res) => {
 });
 
 // DELETE post by ID
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', withAuth, async(req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
