@@ -5,14 +5,15 @@
   <title>Hello</title>
   <!-- Include Handlebars from a CDN -->
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-<script>
-  // compile the template
-  var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
-  // execute the compiled template and print the output to the console
-  console.log(template({ doesWhat: "rocks!" }));
-</script>
  </head>
 <body>
-  <h1>Hello</h1>
+  <div id="foo"></div>
+  <script>
+    // compile the template
+    var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+    // execute the compiled template and print the output to the console
+    window.document.getElementById("foo").innerHTML = template({ doesWhat: "rocks!" })
+  </script>
 </body>
+</html>
 </html>
