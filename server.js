@@ -9,43 +9,43 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 
-// create new sequelize store
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// // create new sequelize store
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // create the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// set up custom helpers 
-const hbs = exphbs.create({ helpers });
+// // set up custom helpers 
+// const hbs = exphbs.create({ helpers });
 
-// configure session
-const sess = {
-  secret: 'Super secret secret',
-  cookie: { 
-    SameSite: 'none',
-    maxAge: 3600000 },
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
+// // configure session
+// const sess = {
+//   secret: 'Super secret secret',
+//   cookie: { 
+//     SameSite: 'none',
+//     maxAge: 3600000 },
+//   resave: false,
+//   saveUninitialized: true,
+//   store: new SequelizeStore({
+//     db: sequelize
+//   })
+// };
 
-// middleware to set up session
-app.use(session(sess));
+// // middleware to set up session
+// app.use(session(sess));
 
-// set up template engine to use
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+// // set up template engine to use
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');
 
-// middleware to parse data and serve static files
+// // middleware to parse data and serve static files
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('./dist')));
 
-// middleware to set up routes
-app.use(routes);
+// // middleware to set up routes
+// app.use(routes);
 
 // set up connection to db and server
 sequelize.sync({ force: false }).then(() => {
