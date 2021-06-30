@@ -10,34 +10,34 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 
 // // create new sequelize store
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // create the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // // set up custom helpers 
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
-// // configure session
-// const sess = {
-//   secret: 'Super secret secret',
-//   cookie: { 
-//     SameSite: 'none',
-//     maxAge: 3600000 },
-//   resave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize
-//   })
-// };
+// configure session
+const sess = {
+  secret: 'Super secret secret',
+  cookie: { 
+    SameSite: 'none',
+    maxAge: 3600000 },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
 
-// // middleware to set up session
-// app.use(session(sess));
+// middleware to set up session
+app.use(session(sess));
 
-// // set up template engine to use
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+// set up template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // // middleware to parse data and serve static files
 app.use(express.json());
