@@ -39,13 +39,14 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// // middleware to parse data and serve static files
+// middleware to parse data and serve static files
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join('./dist')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// // middleware to set up routes
-// app.use(routes);
+
+// middleware to set up routes
+app.use(routes);
 
 // set up connection to db and server
 sequelize.sync({ force: false }).then(() => {
