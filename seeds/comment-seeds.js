@@ -15,18 +15,18 @@ const commentData = [
   },
   {
     comment: `Great arguments for both sides. I personally love them, but to each their own.`,
-    user_id: '1',
-    post_id: '5'
+    user_id: '4',
+    post_id: '3'
   },
   {
     comment: `Can't wait to try these out!`,
-    user_id: '3',
+    user_id: '4',
     post_id: '4'
   },
   {
     comment: `I've used both, but my preference is Postman.`,
-    user_id: '2',
-    post_id: '2'
+    user_id: '4',
+    post_id: '5'
   }
 ];
 
