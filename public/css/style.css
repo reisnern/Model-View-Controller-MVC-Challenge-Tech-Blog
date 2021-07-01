@@ -9,7 +9,7 @@
   }    
   
   .header-bg {
-    background-color: #ea698b;
+    background-color: #f50041;
   }  
   
   /* post properties */
@@ -30,7 +30,7 @@
   }  
   
   .post-bg {
-    background-color: #c05299;
+    background-color: #ff9900;
   }
   
   /* comment properties */
@@ -43,7 +43,7 @@
   }    
   
   .comment-bg {
-    background-color: #573aa8;
+    background-color: #e5ff00;
   }
   
   /* action properties */
@@ -61,17 +61,17 @@
   }      
   
   .btn-bg {
-    background-color: #1155ad;
+    background-color: #006eff;
   }
   
   .btn-bg:hover {
-    background-color: #47126b;
+    background-color: #010002;
     color: #ffffff;
   }
   
   /* other */
   .body-bg {
-    background-color: #736f6f;
+    background-color: #fffbfb;
   }
   
   .nav-link,
@@ -84,6 +84,6 @@
   .post-link:visited,
   .post-link:hover,
   .post-link:active {
-    color: hsl(0, 0%, 38%);
+    color: hsl(0, 100%, 50%);
     text-decoration: none;
   }
