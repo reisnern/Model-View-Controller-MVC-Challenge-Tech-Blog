@@ -65,7 +65,7 @@
   }
   
   .btn-bg:hover {
-    background-color: #010002;
+    background-color: #9c52e6;
     color: #ffffff;
   }
   
@@ -84,6 +84,6 @@
   .post-link:visited,
   .post-link:hover,
   .post-link:active {
-    color: hsl(0, 100%, 50%);
+    color: hsl(0, 0%, 97%);
     text-decoration: none;
   }
