@@ -1,5 +1,8 @@
 # 14 Tech Blog
 
+## Screenshot
+<img width="1440" alt="Screen Shot 2021-07-01 at 2 17 59 PM" src="https://user-images.githubusercontent.com/77903140/124178633-4cd62c80-da77-11eb-8537-2db66a2a2a2e.png">
+
 ## Link
 https://shielded-hamlet-23359.herokuapp.com/
 
